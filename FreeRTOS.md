@@ -38,7 +38,7 @@
 > 前后台操作系统。早期嵌入式开发还没有引入嵌入式OS的概念，直接在裸机上写程序操作裸机。例如，51单片机基本没有操作系统的概念。<font color=red>注：所有OS的入口都是中断。</font>
 
 因此，通常将程序分为两部分：**前台系统、后台系统**。一个简单的前后台系统通常是**一个死循环和若干的中断服务程序**。  
-<img src="img/前后台系统.jpg" width=300 heigth=300 align="middle">  
+<img src="img/front_background.jpg" width=300 heigth=300 align="middle">  
 * **中断为什么要快进快出？**   
 中断是处理紧急事件的。
 * **<font color=red>状态机编程是什么？</font>**
@@ -53,5 +53,5 @@
 在实时操作系统中，我们可以**把要实现的功能划分为多个任务**，每个任务负责实现其中的一部分，每个任务都是一个很简单的程序，通常是一个**死循环**。RTOS的核心就是**任务调度**。  
 
 <img src="img/RTOS.jpg" width=300 heigth=300><br>
-<img src="img/FreeRTOS源码结构.jpg" width=300 heigth=300>
+<img src="img/FreeRTOS_codeStructure.jpg" width=300 heigth=300>
 
