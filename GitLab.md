@@ -70,3 +70,10 @@
 ```
 
 & 用来建立锚点（defaults），<< 表示合并到当前数据，* 用来引用锚点。
+## 2.GitLab CI/CD
+[GitLab CI/CD](https://docs.gitlab.com/ee/ci/) is a tool built into GitLab for software development through the continuous methodologies(持续的方法):
+* Continuous Integration (CI，持续集成)
+* Continuous Delivery (CD，持续交付)
+* Continuous Deployment (CD，持续部署)  
+  
+这些方法可以帮助在早期开发发现bugs和errors。GitLab CI/CD 由一个名为 .gitlab-ci.yml 的文件进行配置，该文件位于仓库的根目录下。文件中指定的脚本由GitLab Runner执行。
