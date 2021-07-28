@@ -107,7 +107,7 @@ Piplines由两部分组成：
 * Jobs 定义做什么，由runners执行。
 * Stages 什么时候跑jobs   
   
-注：**在同一Stages中的多个Jobs之间并行执行。** jobs在执行成功之后进入下一阶段，若失败则pipline停止在当前阶段。
+注：**在同一Stages中的多个Jobs之间并行执行。** jobs在执行成功之后进入下一阶段，若失败则pipeline停止在当前阶段。
 ### 2.2 jobs 执行条件
 通过设置限制条件限定jobs执行：
 * rules  
@@ -145,7 +145,7 @@ except:
     - main@gitlab-org/gitlab
     - /^release/.*$/@gitlab-org/gitlab
 ```    
-有时不想执行job，既可以注释掉同时也可以在job名前加'.'，见下。
+**有时不想执行job，既可以注释掉同时也可以在job名前加'.'**，见下。
 1. 注释  
 ```
 # hidden_job:
@@ -158,7 +158,7 @@ except:
   script:
     - run test
 ```
-<font color=red>注：job不被添加到pipeline的情况见下</font>  
+<font color=red>注：**job不被添加到pipeline的情况见下**</font>  
 * rules不匹配
 * rules匹配但是有"when never"条件
 ### 2.3 [GitLab CI/CD一些关键字</font>](https://docs.gitlab.com/ee/ci/yaml/)
