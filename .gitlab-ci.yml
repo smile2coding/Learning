@@ -1,3 +1,7 @@
+Stages:
+  - build
+  - test
+  - deploy
 test_variable:
   stage: test
   script:
