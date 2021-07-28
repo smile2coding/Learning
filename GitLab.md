@@ -13,21 +13,20 @@
 ### 1.2 数据类型
 * 对象：键值对（类比JSON）  
   * 简单对象 
- ``` 
-   key: 
-     child-key: value
-     child-key2: value2
-```  
-
+  ``` 
+    key: 
+      child-key: value
+      child-key2: value2
+  ```   
   * 复杂对象：使用问号加一个空格代表一个复杂的 key，配合一个冒号加一个空格代表一个 value    
-``` 
-  ?  
-    - complexkey1
-    - complexkey2
-  :
-    - complexvalue1
-    - complexvalue2
-```  
+  ``` 
+    ?  
+      - complexkey1
+      - complexkey2
+    :
+      - complexvalue1
+      - complexvalue2
+  ```  
 
 <font color=red>注：</font>上述复杂对象的定义说明，对象是一个数组，value也是一个数组。
 * 数组  
@@ -146,7 +145,7 @@ except:
     - main@gitlab-org/gitlab
     - /^release/.*$/@gitlab-org/gitlab
 ```    
-有事不想执行job，既可以注释掉同时也可以在job名前加'.'，见下。
+有时不想执行job，既可以注释掉同时也可以在job名前加'.'，见下。
 1. 注释  
 ```
 # hidden_job:
