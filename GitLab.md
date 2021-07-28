@@ -35,7 +35,7 @@
 * **纯量**(scalar)
   * 纯量是最基本的，不可再分的值，包括：字符串、布尔值、整数、浮点数、NULL、时间、日期。  
   
-### 1.3 引用
+### 1.3 引用（Anchor）
  & 锚点和 * 别名，可以用来引用。
    ``` 
     defaults: &defaults
@@ -112,6 +112,20 @@ Piplines由两部分组成：
 ### 2.2 jobs 执行条件
 通过设置限制条件限定jobs执行：
 * rules  
+**rules定义的规则：**
+  * if
+  * changes
+  * exists
+  * allow_failure
+  * variables
+  * when  
+  合法的value见下
+    * on_success
+    * on_failure
+    * always
+    * manual
+    * delayed
+    * never
 ``` 
 job:
 script: echo "Hello, Rules!"
@@ -131,13 +145,57 @@ only:
 except:
     - main@gitlab-org/gitlab
     - /^release/.*$/@gitlab-org/gitlab
-```     
-### 2.3 [Job关键字</font>](https://docs.gitlab.com/ee/ci/yaml/)
+```    
+有事不想执行job，既可以注释掉同时也可以在job名前加'.'，见下。
+1. 注释  
+```
+# hidden_job:
+#   script:
+#     - run test
+```
+2. 添加'.'
+```
+.hidden_job:
+  script:
+    - run test
+```
+<font color=red>注：job不被添加到pipeline的情况见下</font>  
+* rules不匹配
+* rules匹配但是有"when never"条件
+### 2.3 [GitLab CI/CD一些关键字</font>](https://docs.gitlab.com/ee/ci/yaml/)
 |Keyword|Description|
 |---|---|
 |script|被runner执行的shell脚本|
 |image|	Use Docker images.|
 |after_script|Override a set of commands that are executed after job.|
 |before_script|Override a set of commands that are executed before job.|
+|include|包含一个外部YAML文件|
 |...|...|
 
+### 2.4 [stages](https://docs.gitlab.com/ee/ci/yaml/#stages)
+* 如果job没有被声明在某一个stage，则job默认在test阶段
+* 如果stage被声明但是并没有job，则该stage则不会出现在pipeline中
+* 在pipeline中有5个默认stage  
+  * .pre
+  * build
+  * test
+  * deploy
+  * .post
+### 2.5 extends关键字
+extends可以用来复用配置，相当于YAML语法中的引用，该关键字也可以复用include的配置文件。
+### 2.6 tags
+可以使用tags来选择特定的runner来执行。例如，
+```
+job:
+  tags:
+    - ruby
+    - postgres
+```
+### 2.7 [environment](https://docs.gitlab.com/ee/ci/yaml/#environment)
+使用environment关键字定义一个job部署需要的环境。例如，
+```
+deploy to production:
+  stage: deploy
+  script: git push production HEAD:main
+  environment: production
+```
