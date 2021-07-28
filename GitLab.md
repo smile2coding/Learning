@@ -130,4 +130,14 @@ only:
     - branches@gitlab-org/gitlab
 except:
     - main@gitlab-org/gitlab
-    - /^release/.*$/@gitlab-org/gitlab```
+    - /^release/.*$/@gitlab-org/gitlab
+```     
+### 2.3 [Job关键字</font>](https://docs.gitlab.com/ee/ci/yaml/)
+|Keyword|Description|
+|---|---|
+|script|被runner执行的shell脚本|
+|image|	Use Docker images.|
+|after_script|Override a set of commands that are executed after job.|
+|before_script|Override a set of commands that are executed before job.|
+|...|...|
+
