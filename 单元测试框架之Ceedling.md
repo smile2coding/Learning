@@ -1,5 +1,7 @@
 # Ceedling
 > Ceedling 是一个**用 Ruby 语言编写**的自动化测试框架，一个 C 项目构建系统，是对 Ruby Rake 的一个延申。Ceedling 主要目标是以测试为驱动的 C 语言开发，集成CMock、Unity、CException三个开源项目。 
+
+在写这篇blog之前，我推荐国外大神的一篇blog https://dmitryfrank.com/articles/unit_testing_embedded_c_applications
 ## 1.环境搭建
 ### 1.1 Ruby环境
 Windows下，我们使用官方的RubyInstaller安装Ruby环境。[RubyInstaller Archives Link <-----](https://rubyinstaller.org/downloads/archives/
