@@ -3,19 +3,20 @@
 
 ## 1. 支持断言（Assertion）
 Unity最明显的一个特点就是断言。断言是我们希望在嵌入式系统是正确的陈述性语句。例如下面
-```
+```c
 int a = 1;
 TEST_ASSERT( a == 1 ); //this one will pass
 TEST_ASSERT( a == 2 ); //this one will fail
 ```
 当执行Failed会给出下面报错  
 
-```
+```shell
 TestMyModule.c:15:test_One:FAIL
 ```
 虽然，Unity会给出提示，但并不是很友好。我们可以用另外的方法解决。  
 
 `TEST_ASSERT_MESSAGE( a == 2 , "a isn't 2, end of the world!");`
+
 ```
 TestMyModule.c:15:test_one:FAIL:a isn't 2, end of the world!
 ```
