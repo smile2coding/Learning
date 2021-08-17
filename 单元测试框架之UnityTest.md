@@ -1,7 +1,7 @@
 # Unity Test
 > [Unity Test](http://www.throwtheswitch.org/unity)是 throwtheswitch.org 的一个主流项目，该项目100%由C语言构建的，遵循ANSI标准、支持大多数嵌入式编译器。
 
-## 1. 支持断言（Assertion）
+## 1. 断言（Assertion）
 Unity最明显的一个特点就是断言。断言是我们希望在嵌入式系统是正确的陈述性语句。例如下面
 ```c
 int a = 1;
@@ -17,7 +17,7 @@ TestMyModule.c:15:test_One:FAIL
 
 `TEST_ASSERT_MESSAGE( a == 2 , "a isn't 2, end of the world!");`
 
-```
+```c
 TestMyModule.c:15:test_one:FAIL:a isn't 2, end of the world!
 ```
 一些其他的断言  
