@@ -84,24 +84,24 @@
 
 > GitLab中的[预定义变量](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
 
-|Variable|GitLab|Runner|Description|   
-|-----|-----|----|----|  
-|GITLAB_USER_LOGIN|10.0|all|The username of the user who started the job.|  
-|CI_SERVER_HOST|12.1|all|The host of the GitLab instance URL, without protocol or port. For example gitlab.example.com.|  
-|...|...|...|...|
+| Variable          | GitLab | Runner | Description                                                                                    |
+| ----------------- | ------ | ------ | ---------------------------------------------------------------------------------------------- |
+| GITLAB_USER_LOGIN | 10.0   | all    | The username of the user who started the job.                                                  |
+| CI_SERVER_HOST    | 12.1   | all    | The host of the GitLab instance URL, without protocol or port. For example gitlab.example.com. |
+| ...               | ...    | ...    | ...                                                                                            |
 
 > GitLab中的一些 [Concepts](https://docs.gitlab.com/ee/ci/#concepts)
 
-|Concept|Description|  
-|-----|-----|  
-|Pipelines|Structure your CI/CD process through pipelines.|  
-|CI/CD variables|Reuse values based on a variable/value key pair.|  
-|Job artifacts|Output, use, and reuse job artifacts.|  
-|Environments|Deploy your application to different environments (e.g., staging, production).|  
-|Cache dependencies	|Cache your dependencies for a faster execution.|  
-|GitLab Runner|Configure your own runners to execute your scripts.|  
-|Pipeline efficiency|Configure your pipelines to run quickly and efficiently.|  
-|Test cases|Configure your pipelines to run quickly and efficiently.|  
+| Concept             | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| Pipelines           | Structure your CI/CD process through pipelines.                                |
+| CI/CD variables     | Reuse values based on a variable/value key pair.                               |
+| Job artifacts       | Output, use, and reuse job artifacts.                                          |
+| Environments        | Deploy your application to different environments (e.g., staging, production). |
+| Cache dependencies  | Cache your dependencies for a faster execution.                                |
+| GitLab Runner       | Configure your own runners to execute your scripts.                            |
+| Pipeline efficiency | Configure your pipelines to run quickly and efficiently.                       |
+| Test cases          | Configure your pipelines to run quickly and efficiently.                       |
 ### 2.1 CI/CD pipelines
 Piplines由两部分组成：
 * Jobs 定义做什么，由runners执行。
@@ -162,14 +162,14 @@ except:
 * rules不匹配
 * rules匹配但是有"when never"条件
 ### 2.3 [GitLab CI/CD一些关键字</font>](https://docs.gitlab.com/ee/ci/yaml/)
-|Keyword|Description|
-|---|---|
-|script|被runner执行的shell脚本|
-|image|	Use Docker images.|
-|after_script|Override a set of commands that are executed after job.|
-|before_script|Override a set of commands that are executed before job.|
-|include|包含一个外部YAML文件|
-|...|...|
+| Keyword       | Description                                              |
+| ------------- | -------------------------------------------------------- |
+| script        | 被runner执行的shell脚本                                  |
+| image         | Use Docker images.                                       |
+| after_script  | Override a set of commands that are executed after job.  |
+| before_script | Override a set of commands that are executed before job. |
+| include       | 包含一个外部YAML文件                                     |
+| ...           | ...                                                      |
 
 ### 2.4 [stages](https://docs.gitlab.com/ee/ci/yaml/#stages)
 * 如果job没有被声明在某一个stage，则job默认在test阶段
