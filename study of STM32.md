@@ -19,3 +19,18 @@ ARM公司自2004年推出ARMv7内核架构，之后便放弃了以”ARM+数字�
 - Cortex-R系列：面向实时应用的高性能内核
 - Cortex-M系列：面向各类嵌入式应用的微控制器内核
 
+## 3. GPIO
+
+STM32的GPIO口有八种模式：
+
+* GPIO_Mode_AIN 模拟输入
+* GPIO_Mode_IN_FLOATING 浮空输入
+* GPIO_Mode_IPD 下拉输入
+* GPIO_Mode_IPU 上拉输入
+* GPIO_Mode_Out_OD 开漏输出
+* GPIO_Mode_Out_PP 推挽输出
+* GPIO_Mode_AF_OD 复用开漏输出
+* GPIO_Mode_AF_PP 复用推挽输出
+
+
+
