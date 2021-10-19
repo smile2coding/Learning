@@ -39,3 +39,6 @@ Git优势：
 2. git config --local 的设置在 "/.git/config"中
 
 ## 3.Git操作及ignore
+
+#### 3.1 rebase操作
+
