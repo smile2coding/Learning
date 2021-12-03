@@ -2,4 +2,4 @@ test_variable:
   stage: test
   script:
     - echo "$CI_JOB_STAGE"
-    - echo "CI_PIPELINE_IID"
+    - echo "$CI_PIPELINE_IID"
