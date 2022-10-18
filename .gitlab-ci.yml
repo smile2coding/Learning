@@ -6,3 +6,8 @@ test_variable:
   script:
     - echo "$CI_JOB_STAGE"
     - echo "$CI_PIPELINE_IID"
+  artifacts:
+    untracked: false
+    expire_in: "30 days"
+    paths:
+      - ./public
