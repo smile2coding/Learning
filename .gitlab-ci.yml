@@ -1,8 +1,8 @@
 stages:
-  - test
+  - deploy
 
 test_variable:
-  stage: test
+  stage: deploy
   script:
     - echo "$CI_JOB_STAGE"
     - echo "$CI_PIPELINE_IID"
