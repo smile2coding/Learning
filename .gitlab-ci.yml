@@ -2,7 +2,11 @@ stages:
   - deploy
 
 test_variable:
-  image: alpine:late
+  image: alpine:latest
+  variables:
+  http_proxy: $CODE_PROXY
+  https_proxy: $CODE_PROXY
+  no_proxy: .siemens.com
   stage: deploy
   script:
     - echo "$CI_JOB_STAGE"
