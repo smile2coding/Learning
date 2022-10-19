@@ -2,6 +2,7 @@ stages:
   - deploy
 
 test_variable:
+  image: alpine:late
   stage: deploy
   script:
     - echo "$CI_JOB_STAGE"
