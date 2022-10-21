@@ -1,18 +1,14 @@
-stages:
-  - deploy
+image: ruby:2.7
 
-test_variable:
-  image: alpine:latest
+pages:
   variables:
     http_proxy: $CODE_PROXY
     https_proxy: $CODE_PROXY
     no_proxy: .siemens.com
-  stage: deploy
   script:
-    - echo "$CI_JOB_STAGE"
-    - echo "$CI_PIPELINE_IID"
+    - gem install bundler
+    - bundle install
+    - bundle exec jekyll build -d public
   artifacts:
-    untracked: false
-    expire_in: "30 days"
     paths:
-      - ./public
+      - public
