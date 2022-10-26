@@ -22,16 +22,16 @@ int bubbleSort(int arr[], int len)
             }
         }
 
-        if(changed == 0)
+        if (changed == 0)
             break;
     }
 
     return 0;
 }
 
-int testArray[10] = {1, 4, 7, 9, 20, 12, 3, 4, 6, 7};
 int main()
 {
+    int testArray[10] = {1, 4, 7, 9, 20, 12, 3, 4, 6, 7};
     bubbleSort(testArray, 10);
     for (int i = 0; i < 10; i++)
     {
