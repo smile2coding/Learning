@@ -1,5 +1,6 @@
 #include "stdio.h"
 
+// sequence sort
 int traversalSearch(int arr[], int len, int val, int *index)
 {
     for (int i = 0; i < len; i++)
