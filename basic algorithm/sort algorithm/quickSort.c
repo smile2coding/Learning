@@ -13,13 +13,13 @@ int quickSort(int arr[], int left, int right)
                 high--;
             }
             if (low < high)
-                arr[low++] = arr[high];
+                arr[low] = arr[high];
             while (low < high && pivot > arr[low])
             {
                 low++;
             }
             if (low < high)
-                arr[high--] = arr[low];
+                arr[high] = arr[low];
         }
         arr[low] = pivot;
         quickSort(arr, left, low - 1);
